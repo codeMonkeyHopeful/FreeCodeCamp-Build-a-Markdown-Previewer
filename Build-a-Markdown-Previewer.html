@@ -33,7 +33,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <!-- Testing lib -->
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" async defer></script>
-
+    <!-- import marked -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.0.7/marked.min.js"
+        integrity="sha512-fwf7pKArHujSZt2iUumm3+NMNdGYLartGhk2lvmANwTYqPyvYhLbrLMi9jshUKfjy9faT5CmeAKDN/8PyzbV2g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./Build-a-Markdown-Previewer.css">
     <script src="./Build-a-Markdown-Previewer.js" async defer></script>
 </head>
@@ -47,8 +50,9 @@
             <h1 class="mb-3">Heading</h1>
         </div>
         <div id="editor-text-container">
-            <textarea id="editor">Editor goes here</textarea>
+            <textarea id="editor">editor</textarea>
         </div>
+        <div id="preview"></div>
     </div>
 
 </body>
