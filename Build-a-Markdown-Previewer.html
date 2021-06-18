@@ -38,22 +38,20 @@
         integrity="sha512-fwf7pKArHujSZt2iUumm3+NMNdGYLartGhk2lvmANwTYqPyvYhLbrLMi9jshUKfjy9faT5CmeAKDN/8PyzbV2g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./Build-a-Markdown-Previewer.css">
-    <script src="./Build-a-Markdown-Previewer.js" async defer></script>
+
+
+    <script src='https://unpkg.com/react@16.3.1/umd/react.production.min.js'></script>
+    <script src='https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js'>    </script>
+    <script src='https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js'></script>
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
+
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <div id="editor-container">
-        <div class="p-5 text-center bg-light">
-            <h1 class="mb-3">Heading</h1>
-        </div>
-        <div id="editor-text-container">
-            <textarea id="editor">editor</textarea>
-        </div>
-        <div id="preview"></div>
-    </div>
+    <div id='root'></div>
+
+    <script src="./Build-a-Markdown-Previewer.js" type='text/babel'></script>
+</body>
 
 </body>
 

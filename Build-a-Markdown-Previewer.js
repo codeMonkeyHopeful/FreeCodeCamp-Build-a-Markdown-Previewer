@@ -1,6 +1,8 @@
-$(document).ready(function () {
-  console.log("test");
-  document.getElementById("preview").innerHTML = marked(
-    "# Marked in the browser\n\nRendered by **marked**."
-  );
-});
+// import React from "react";
+class Application extends React.Component {
+  render() {
+    return <div className="container">testsdfasdfsdf</div>;
+  }
+}
+
+ReactDOM.render(<Application />, document.getElementById("root"));
