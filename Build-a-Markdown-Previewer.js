@@ -2,7 +2,7 @@
 
 $(document).ready(() => {
   $("#editor").on("keyup", function () {
-    $("#preview").text($("#editor").text());
+    $("#preview").html(marked($("#editor").text()));
   });
 });
 
@@ -44,7 +44,7 @@ class Editor extends React.Component {
         onChange={this.handleChange}
         value={this.state.markDown}
       >
-        {/* {this.state.markDown} */}
+        {/* {marked(this.state.markDown)} */}
       </textarea>
     );
   }
