@@ -1,6 +1,8 @@
 // import React from "react";
 
 $(document).ready(() => {
+  $("#preview").html(marked($("#editor").text()));
+
   $("#editor").on("keyup", function () {
     $("#preview").html(marked($("#editor").text()));
   });
@@ -25,7 +27,7 @@ class Editor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      markDown: "",
+      markDown: `# H1 \n## H2\n### H3 \n#### H4\n- li\n- li\n- liiiiiiiii \n\n ####  **BOLD** example \n *ITALIC* example \n\n#### Checkout my github! [Github](https://github.com/codeMonkeyHopeful) \n\n \`\`\`\n codeblocks look like this!  \n\`\`\` \n \`inline code\` \n > blockquote \n\n Scan me =>![you wanna see this!](https://upload.wikimedia.org/wikipedia/commons/3/3f/Totally_not_a_Rickroll_QR_code.png)`,
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -44,7 +46,7 @@ class Editor extends React.Component {
         onChange={this.handleChange}
         value={this.state.markDown}
       >
-        {/* {marked(this.state.markDown)} */}
+        {/* intial state is pulled from state above */}
       </textarea>
     );
   }
@@ -56,7 +58,11 @@ class Viewer extends React.Component {
   }
 
   render() {
-    return <div className="col-xs-4" id="preview"></div>;
+    return (
+      <div className="col-xs-4" id="preview">
+        {/* we populate here from edior */}
+      </div>
+    );
   }
 }
 
