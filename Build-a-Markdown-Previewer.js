@@ -1,4 +1,11 @@
 // import React from "react";
+
+$(document).ready(() => {
+  $("#editor").on("keyup", function () {
+    $("#preview").text($("#editor").text());
+  });
+});
+
 const Application = () => {
   return (
     <div class="text-center">
@@ -17,10 +24,29 @@ const Application = () => {
 class Editor extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      markDown: "",
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange(e) {
+    this.setState({ markDown: e.target.value });
+
+    console.log(this.state.markDown);
+  }
+
   render() {
-    return <textarea id="editor" className="col-xs-4"></textarea>;
+    return (
+      <textarea
+        id="editor"
+        className="col-xs-4"
+        onChange={this.handleChange}
+        value={this.state.markDown}
+      >
+        {/* {this.state.markDown} */}
+      </textarea>
+    );
   }
 }
 
@@ -30,7 +56,7 @@ class Viewer extends React.Component {
   }
 
   render() {
-    return <div className="col-xs-4">I'm the viewer</div>;
+    return <div className="col-xs-4" id="preview"></div>;
   }
 }
 
