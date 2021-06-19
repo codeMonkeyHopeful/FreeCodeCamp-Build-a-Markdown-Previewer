@@ -1,8 +1,10 @@
 // import React from "react";
 
-$(document).ready(() => {
-  $("#preview").html(marked($("#editor").text()));
+// $(window).on("load", () => {
+//   $("#preview").html(marked($("#editor").text()));
+// });
 
+$(document).ready(() => {
   $("#editor").on("keyup", function () {
     $("#preview").html(marked($("#editor").text()));
   });
@@ -57,6 +59,9 @@ class Viewer extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    $("#preview").html(marked($("#editor").text()));
+  }
   render() {
     return (
       <div className="col-xs-4" id="preview">
