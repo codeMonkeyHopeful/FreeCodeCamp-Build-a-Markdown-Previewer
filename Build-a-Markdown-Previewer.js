@@ -2,9 +2,14 @@
 const Application = () => {
   return (
     <div class="text-center">
-      <div className="main">App Component</div>
-      <Editor />
-      <Viewer />
+      App Component
+      <div className="main row d-flex justify-content-around">
+        <div className="col-xs-1"></div>
+        <Editor />
+        <div className="col-xs-2"></div>
+        <Viewer />
+        <div className="col-xs-1"></div>
+      </div>
     </div>
   );
 };
@@ -15,7 +20,7 @@ class Editor extends React.Component {
     this.state = {};
   }
   render() {
-    return <div>I'm the Editor!</div>;
+    return <textarea id="editor" className="col-xs-4"></textarea>;
   }
 }
 
@@ -25,7 +30,7 @@ class Viewer extends React.Component {
   }
 
   render() {
-    return <div>I'm the viewer</div>;
+    return <div className="col-xs-4">I'm the viewer</div>;
   }
 }
 
